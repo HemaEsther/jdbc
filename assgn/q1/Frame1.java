@@ -14,9 +14,9 @@ import javax.swing.SwingUtilities;
 public class Frame1{ 
     Frame1(){
         JFrame frame = new JFrame("Simple Swing Application");
-        frame.setSize(180,100);
+        frame.setSize(280,200);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        frame.setLayout(new FlowLayout());
+        frame.setLayout(new GridLayout(3,2));
 
         JLabel user = new JLabel("Username :");
         JTextField userarea = new JTextField(15);
@@ -38,11 +38,14 @@ public class Frame1{
             passarea.setText(null);
             }
         });
-        // login.addActionListener(new ActionListener() {
-        //     public void actionPerformed(ActionEvent e){
-        //         lbl.setText("Right Button clicked");
-        //     }
-        // });
+        login.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e){
+                String user = userarea.getText();
+                String pass = new String(passarea.getPassword());
+                System.out.println("username :" + user);
+                System.out.println("password :" + pass);
+            }
+        });
         frame.setVisible(true);
 
     }
