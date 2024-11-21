@@ -32,6 +32,10 @@ public class Frame1{
             }
         });
         frame.setVisible(true);
+
+
+
+        
     }
 
     public static void main(String[] args) {
