@@ -6,6 +6,9 @@ import java.awt.event.ActionListener;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JPasswordField;
+import javax.swing.JTextArea;
+import javax.swing.JTextField;
 import javax.swing.SwingUtilities;
 
 public class Frame1{ 
@@ -15,27 +18,33 @@ public class Frame1{
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setLayout(new FlowLayout());
 
-        JButton left = new JButton("Left");
-        JButton right = new JButton("Right");
-        JLabel lbl = new JLabel("Click a button" );
-        frame.add(left);
-        frame.add(right);
-        frame.add(lbl);
-        left.addActionListener(new ActionListener() {
+        JLabel user = new JLabel("Username :");
+        JTextField userarea = new JTextField(15);
+        JLabel pass = new JLabel("Password :");
+        JPasswordField passarea = new JPasswordField(15);
+        JButton reset = new JButton("Reset");
+        JButton login = new JButton("Login");
+        
+        frame.add(user);
+        frame.add(userarea);
+        frame.add(pass);
+        frame.add(passarea);
+        frame.add(reset);
+        frame.add(login);
+        
+        reset.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e){ 
-            lbl.setText("Left Button clicked");
+            userarea.setText(null);
+            passarea.setText(null);
             }
         });
-        right.addActionListener(new ActionListener() {
-            public void actionPerformed(ActionEvent e){
-                lbl.setText("Right Button clicked");
-            }
-        });
+        // login.addActionListener(new ActionListener() {
+        //     public void actionPerformed(ActionEvent e){
+        //         lbl.setText("Right Button clicked");
+        //     }
+        // });
         frame.setVisible(true);
 
-
-
-        
     }
 
     public static void main(String[] args) {
